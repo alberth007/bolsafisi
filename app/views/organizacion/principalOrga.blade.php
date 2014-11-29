@@ -19,13 +19,17 @@
 	.color1{
 		background-color: blue;
 	}
-	#fondo-natural{
-		background-color: #F5F5F5;
+	#mi-fondo{
+		
+		background-image: url('img/Ger_empresas.jpg');
+		background-size: 100%;
+		background-repeat: no-repeat;
+
 	}
 	</style>
 
 </head>
-<body id="fondo-natural">
+<body id="mifondo">
 	<!-- <div class="top-gec">
 		<div class="row">
 			<div class="col-lg-8">

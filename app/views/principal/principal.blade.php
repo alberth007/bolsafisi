@@ -74,7 +74,7 @@
    
       <div class="carousel-caption">
       <h3>Los mejores anuncios</h3>
-      <p>descripcion</p>
+    
       </div>
     </div>
     <div class="item">
@@ -82,7 +82,7 @@
       
       <div class="carousel-caption">
        <h3>En la mejor plataforma</h3>
-      <p>descripcion</p>
+     
       </div>
     </div>
     
@@ -91,7 +91,7 @@
       
       <div class="carousel-caption">
        <h3>En la mejor plataforma</h3>
-      <p>descripcion</p>
+     
       </div>
     </div>
     
@@ -160,39 +160,49 @@
 					</div>
 					<div class="col-lg-8" >
 						
-						<div class="row color1" style="margin-top: 10px; margin-bottom: 10px; margin-right: 0px;">
-							<h2 class="color1" style="padding-left: 20px;">AVISOS DESTACADOS</h2>
-						</div>
-						<div class="row colorle1" style="margin-right: 0px; margin-left: -30px;">
-							@foreach ($personaorganuncio as $anuncio)
-							<div class="panel panel-default">
-							  <div class="panel-body">
-							    
-								<div class="col-lg-4">
-											<div >
-									   <div class="thumbnail">
-									      <img src="img5.jpg" alt="imagen">
-									      <div class="caption">
-									              <p>{{$anuncio->titulo}}</p>
-									              <p>{{$anuncio->nombre}}</p>
-									              <p>{{$anuncio->rubro}}</p>
-									      </div>
-									   </div>
-
-									</div>
-								</div>
-
-								<div class="col-lg-8">
-									<h3>{{$anuncio->area}}</h3>
-								</div>
-
+							<div class="panel panel-primary">
+                            <div class="panel-heading" style="height: 61px;">
+                                <h2 class="panel-title"><h2 style="margin-top: 5px;">Avisos destacados</h2></h2>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                
+                                @foreach ($personaorganuncio as $anuncio)
+				
+						<div class="panel panel-primary">
+							  <div class="panel-heading">
+							  	<h2 class="panel-title">
+							    	<h3>{{$anuncio->titulo}}</h3>
+							    </h2>
 							  </div>
-							</div>
-							@endforeach
-
-							
+							  <div class="panel-body">
+							  	<div class="row">
+							  		<div class="col-md-4">
+							  			<div class="thumbnail" style="width: 110px; height: 110px;margin-left: 70px;">
+									      {{ HTML::image('img/convocatoria.png')}}
+									      <div class="caption">
+									      </div>
+						 				</div>
+							  		</div>
+							  		<div class="col-md-8">
+							  	<h4>Empresa: {{$anuncio->nombre}}</h4>
+							    <h5>Area del puesto: {{$anuncio->area}}</h5>
+							    <h5>Fecha de publicacion: {{$anuncio->created_at}}</h5>
+							    <h5>Salario ofrecido: {{$anuncio->salario}}</h5>
+							   
+							   
+							    <a href="/verAnuncio/{{$anuncio->id}}" class="btn btn-primary" role="button" style="margin-left: 10px; margin-right: 10px;">Ver anuncio</a>
+							    	</div>
+							  </div>
+							  </div>
 						</div>
-						
+					@endforeach
+                                    
+                                
+            					
+            					</div>
+						    </div>
+						</div>
 						
 		
 						

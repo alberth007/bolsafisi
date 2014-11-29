@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="es">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Modificar Datos</title>
@@ -24,18 +27,48 @@
 
 </head>
 <body id="fondo-natural">
+<nav role="navigation" class="navbar navbar-inverse">
+	        <div class="navbar-header">
+	            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+	                <span class="sr-only">Toggle navigation</span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	            </button>
+	            <a href="#" class="navbar-brand">Logotipo</a>
+	        </div>
 
-@extends('esquemas.eaps')
+	        <div id="navbarCollapse" class="collapse navbar-collapse">
+	            <ul class="nav navbar-nav">
+	               	<li><a href="/estudiantes/principal">Inicio</a></li>
+	                <li class="active"><a href="#">Modificar datos</a></li>
+	                <li><a href="/estudiantes/postulaciones">Mis postulaciones</a></li>
+	                
+	            </ul>
+	            @if(!Auth::check())
+	            <div class="row">
+		           	<a href="/login" class="btn btn-primary navbar-btn navbar-right" role="button" style="margin-left: 10px;
+ margin-right: 10px;">Inicia Sesion</a>
+		           	<a href="/usuarios/create" class="btn btn-primary navbar-btn navbar-right" role="button">Registrate</a>
+	        	</div>
+	        	@endif
+	        	@if(Auth::check())
+	        		<a href="/principal" class="btn btn-success navbar-btn navbar-right" role="button" style="margin-left: 10px;
+ margin-right: 10px;">Cerrar Sesion</a>
+	        </div>
+	        @endif
+	</nav>
 
-@section('titulo')
-Registrar estudiante
-@stop
-
-@section('contenido')
 
 <form action="{{ URL::action('RegistronaturalesController@store')}}" method="POST" id="f1">
 
-<!-- {{ Form::open(['action' => 'UsuariosController@store']) }} -->
+<div class="container">
+
+	<div class="panel panel-primary">
+			<div class="panel-heading">
+			    <h3 class="panel-title">Datos Personales</h3>
+			</div>
+			<div class="panel-body">
 	
 	<div class="form-group">
 	    <label for="usuario">Nombres: </label>
@@ -116,11 +149,11 @@ Registrar estudiante
 	</div>
 
 	<button type="submit" class="btn btn-primary">Siguiente</button>
+	</div>
+	</div>
+	</div>
 </form>
-			<!-- {{ Form::submit('Registrar', ['class' => 'btn btn-primary btn-lg']) }}
-{{ Form::close() }}
-	 -->
 
-@stop
 
 </body>
+</html>

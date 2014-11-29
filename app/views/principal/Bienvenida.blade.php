@@ -41,7 +41,7 @@
 	                <span class="icon-bar"></span>
 	                <span class="icon-bar"></span>
 	            </button>
-	            <a href="#" class="navbar-brand">Logotipo</a>
+	            <a href="#" class="navbar-brand">BolsaFisi</a>
 	        </div>
 
 	        <div id="navbarCollapse" class="collapse navbar-collapse">
@@ -57,25 +57,31 @@
 	</header>
 
 <div class="container">
-	<div class="box">
+	<div >
 		<div class="vertical-container">
 			<div class="vertically-centered">
 
-					<div class="col-md-8 col-md-offset-2">
-					<h1 class="texto">
-						BIENVENIDO
-					</h1>
-					<div class="row">
-						<div class="col-md-6">
-							<a href="/login" class="btn btn-primary" role="button" style="margin-left: 10px;margin-right: 10px;">Ingresa</a>
-						</div>
-						<div class="col-md-6">
-							<a href="/usuarios/create" class="btn btn-primary" role="button" style="
-    						margin-left: 10px;">Registrate</a>
-						</div>
-
-					</div>
-				</div>
+					<div >
+    					<h1>
+    						BIENVENIDO
+    					</h1>
+    					<div class="row">
+    					    <h3> Te ayudamos a encontrar un empleo</h3>
+    					</div>
+    					<div class="row">
+    					    <h5> Haz que tu curriculum sea visible para miles de empresas</h5>
+    					</div>
+    					<div class="row">
+    						<div class="col-md-6">
+    							<a href="/login" class="btn btn-primary" role="button" style="margin-left: 10px;margin-right: 10px;">Ingresa</a>
+    						</div>
+    						<div class="col-md-6">
+    							<a href="/usuarios/create" class="btn btn-primary" role="button" style="
+        						margin-left: 10px;">Registrate</a>
+    						</div>
+    
+    					</div>
+			    	</div>
 
 			</div>
 		</div>

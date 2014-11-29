@@ -1,17 +1,20 @@
-@extends('esquemas.eaps')
-
-@section('titulo')
-Registrar usuario
-@stop
-
-@section('contenido')
-
+<!DOCTYPE html>
+<html lang="es">
 <head>
-		<style>
+	<meta charset="UTF-8">
+	<title>Registrar Usuario</title>
+		<link rel="stylesheet" href="css/bootstrap.css">
+	<link href='http://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user scalable=no">
+	{{ HTML::style('css/bootstrap.css') }}
+	{{ HTML::style('css/bootstrap.min.css') }}
+	{{ HTML::style('css/estilos.css') }}
+	{{ HTML::script('js/ajax.js') }}
+    <style>
 	
-	#mi-fondo{
+	#mi-fondo1{
 		
-		background-image: url('img/bienvenida.png');
+		background-image: url('img/recursos-humanos.jpg');
 		background-size: 100%;
 		background-repeat: no-repeat;
 
@@ -37,7 +40,8 @@ Registrar usuario
 
 </head>
 
-<body>
+<body id="mi-fondo1">
+    
 	<div class="header color-pri">
 		
 			<h1 class="colorle" style="margin-top: 0px; padding-top: 15px;">BolsaFISI</h1>
@@ -114,11 +118,8 @@ Registrar usuario
 			
 		</div>
 	</div>
-
-
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/bootstrap.js"></script>
 </body>
 
-			<!-- {{ Form::submit('Registrar', ['class' => 'btn btn-primary btn-lg']) }}
-{{ Form::close() }}
-	 -->
-@stop
+</html>

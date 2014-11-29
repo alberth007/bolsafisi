@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Modificar Organizaciones</title>
+	<title>Modificar Estudiantes</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user scalable=no">
 	{{ HTML::style('css/bootstrap.css') }}
 	{{ HTML::style('css/bootstrap.min.css') }}
