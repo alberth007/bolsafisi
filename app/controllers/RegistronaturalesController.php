@@ -28,7 +28,24 @@ class RegistronaturalesController extends \BaseController {
 	 * Store a newly created resource in storage.
 	 *
 	 * @return Response
+	 * 
+	 * 
 	 */
+	 
+	 public function ModificarCurriculum(){
+	    $persona_id = Auth::User()->persona->natural->id;
+		//$estudiante = Naturale::where('persona_id', '=', $persona_id)->id->get();
+		$idiomas = Idioma::where('naturale_id', '=', $persona_id)->get();
+		$estudios = Estudio::where('naturale_id', '=', $persona_id)->get();
+		$experiencias = Experiencia::where('naturale_id', '=', $persona_id)->get();
+	     
+    	return View::make('naturales.ModificarCurriculum')
+    	            ->with(compact('idiomas'))
+    	            ->with(compact('estudios'))
+    	            ->with(compact('experiencias'))
+    	            ->with(compact('persona_id'));
+}
+
 	public function store()
 	{
 
@@ -267,6 +284,15 @@ public function postActualizarOrga()
 	 */
 
 	public function mostrarPostulaciones(){
+	    
+	    $nropersonas = Persona::where('usuario_id', '=', Auth::user()->id)->count();
+		if($nropersonas == 0){
+		     return Redirect::to('estudiantes/principal')->with([
+                    		'mensaje' => 'No tienes postulaciones',
+                    		'tipoMensaje' => 'info'
+                    		]); 
+		}
+		
 		$usuario = Usuario::with(['persona', 'persona.natural'])->where('usuarios.id', '=', Auth::user()->id)->first();
 		$natural = $usuario->persona->natural->id;
 
@@ -290,11 +316,27 @@ public function postActualizarOrga()
 	}
 	public function GuardarPostulacion($idanuncio)
 	{
-		
+		$nropersonas = Persona::where('usuario_id', '=', Auth::user()->id)->count();
+		if($nropersonas == 0){
+		     return Redirect::to('estudiantes/principal')->with([
+                    		'mensaje' => 'Debes registrar tus datos personales antes de postular a un anuncio',
+                    		'tipoMensaje' => 'info'
+                    		]); 
+		}
 		$usuario = Usuario::with(['persona', 'persona.natural'])->where('usuarios.id', '=', Auth::user()->id)->first();
 		$persona = $usuario->persona;
 		$natural = $usuario->persona->natural;
+		$idnatu = $natural->id;
 		$aviso = Aviso::find($idanuncio);
+		$aviso_natu = Avisonatural::where('aviso_id', '=', $idanuncio)->where('naturale_id', '=', $idnatu)->count();
+	
+		if($aviso_natu == 1){
+		   return Redirect::to('estudiantes/principal')->with([
+		'mensaje' => 'ya habias postulado a ese aviso',
+		'tipoMensaje' => 'info'
+		]); 
+		}
+		
 		$aviso->naturales()->attach($natural->id, array('estado' => 'recibido' ));
 		// $avisonat = new Avisonatural();
 		// $avisonat->aviso_id = $idanuncio;

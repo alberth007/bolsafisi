@@ -45,6 +45,7 @@ Route::get('/organizaciones/postulantes/{anunciouni}', 'OrganizacionesController
 Route::get('/registro/estudiante', 'RegistrosController@getRegistroCurriculum');
 Route::get('/estudiantes/postulaciones', 'RegistronaturalesController@mostrarPostulaciones');
 Route::get('/organizaciones/misAnuncios', 'OrganizacionesController@MostrarMisAnuncios');
+Route::get('/estudiantes/modificarEstudios', 'RegistronaturalesController@ModificarCurriculum');
 //Route::post('/organizaciones/principal', 'OrganizacionesController@getAnuncio');
 Route::get('/principal', 'RegistrosController@getPrincipal');
 Route::get('/organizaciones/crearAnuncio', 'OrganizacionesController@getAnuncio');

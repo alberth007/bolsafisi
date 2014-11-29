@@ -111,7 +111,7 @@
 	</div>
 
 	<div class="form-group">
-		<fieldset disabled>
+		
 		<label for="departamento">Departamento: </label>
 		<input type="text" id="departamento" name="departamento" class="form-control" placeholder="Lima" value="lima">
 		<!-- @if ($errors->has('clave'))
@@ -119,7 +119,7 @@
 			<p class="alert-danger">{{ $error }}</p>
 			@endforeach
 		@endif -->
-		</fieldset>
+	
 	</div>
 
 

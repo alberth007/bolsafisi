@@ -51,9 +51,9 @@
 
 	        <div id="navbarCollapse" class="collapse navbar-collapse">
 	            <ul class="nav navbar-nav">
-	                <li class="active"><a href="/estudiantes/principal">Inicio</a></li>
+	                <li><a href="/estudiantes/principal">Inicio</a></li>
 	                <li><a href="/registro/estudiantes">Modificar datos</a></li>
-	                <li><a href="#">Mis postulaciones</a></li>
+	                <li><a href="/estudiantes/postulaciones">Mis postulaciones</a></li>
 	                
 	            </ul>
 	            @if(!Auth::check())

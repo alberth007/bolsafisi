@@ -163,7 +163,7 @@
 	<button type="submit" class="btn btn-primary">Terminar</button>
 </form>
 
-<a href="#" class="btn btn-primary" role="button" style="margin-left: 10px;
+<a href="/estudiantes/modificarEstudios" class="btn btn-primary" role="button" style="margin-left: 10px;
  margin-right: 10px;">Modificar Estudios y demas</a>
 
 </body>

@@ -11,7 +11,7 @@ class EapsController extends \BaseController {
 	{
 		$eaps = Eap::all();
 
-		return View::make('eaps.index', compact('eaps'));
+		return View::make('Eaps.index', compact('eaps'));
 	}
 
 	/**
@@ -21,7 +21,7 @@ class EapsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('eaps.create');
+		return View::make('Eaps.create');
 	}
 
 	/**

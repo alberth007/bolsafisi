@@ -47,13 +47,13 @@ class OrganizacionesController extends \BaseController {
 		foreach ($organizacion as $orga) {
 				$codigorga = $orga->id;
 		}
-			$date = new DateTime();
-			if($date > Input::get('fecha_limite')){
-				return Redirect::back()->with([
-		'mensaje' => 'La fecha no puede ser anterior al dia actual',
-		'tipoMensaje' => 'info'
-		]);
-			}
+			//$date = new DateTime();
+			//if($date > Input::get('fecha_limite')){
+// 				return Redirect::back()->with([
+// 		'mensaje' => 'La fecha no puede ser anterior al dia actual',
+// 		'tipoMensaje' => 'info'
+// 		]);
+// 			}
 
 		$aviso = new Aviso();
 		$aviso->titulo = Input::get('titulo');

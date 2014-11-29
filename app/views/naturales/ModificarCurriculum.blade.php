@@ -1,22 +1,68 @@
-@extends('esquemas.eaps')
-
-@section('titulo')
-Registrar Curriculum
-@stop
-
-@section('contenido')
-
-
-<!-- {{ Form::open(['action' => 'UsuariosController@store']) }} -->
-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Modificar Organizaciones</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user scalable=no">
+	{{ HTML::style('css/bootstrap.css') }}
+	{{ HTML::style('css/bootstrap.min.css') }}
+	{{ HTML::style('css/estilos.css') }}
+	{{ HTML::script('js/ajax.js') }}
+	<!-- <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"> -->
+	<meta name=viewport content="width=device-width, initial-scale=1">
 	
+	<style>
+	.color2{
+  	background-color: orange; 
+	}
+	.color1{
+		background-color: blue;
+	}
+	#fondo-natural{
+		background-color: #F5F5F5;
+	}
+	</style>
+
+</head>
+<body id="fondo-natural">
+
+<nav role="navigation" class="navbar navbar-inverse">
+	        <div class="navbar-header">
+	            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+	                <span class="sr-only">Toggle navigation</span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	            </button>
+	            <a href="#" class="navbar-brand">Logotipo</a>
+	        </div>
+
+	        <div id="navbarCollapse" class="collapse navbar-collapse">
+	            <ul class="nav navbar-nav">
+	               	<li><a href="/estudiantes/principal">Inicio</a></li>
+	                <li class="active"><a href="#">Modificar datos</a></li>
+	                <li><a href="/estudiantes/postulaciones">Mis postulaciones</a></li>
+	                
+	            </ul>
+	            @if(!Auth::check())
+	            <div class="row">
+		           	<a href="/login" class="btn btn-primary navbar-btn navbar-right" role="button" style="margin-left: 10px;
+ margin-right: 10px;">Inicia Sesion</a>
+		           	<a href="/usuarios/create" class="btn btn-primary navbar-btn navbar-right" role="button">Registrate</a>
+	        	</div>
+	        	@endif
+	        	@if(Auth::check())
+	        		<a href="/principal" class="btn btn-success navbar-btn navbar-right" role="button" style="margin-left: 10px;
+ margin-right: 10px;">Cerrar Sesion</a>
+	        </div>
+	        @endif
+	</nav>
 	<div class="panel panel-default">
 		<div class="panel-heading">Idiomas</div>
 		<div class="panel-body">
-		  	<!-- <form action="{{ URL::action('RegistrosController@getRegistrarIdioma')}}" method="POST" id="f1"> -->
-		  		<!-- {{$naturale->id}} -->
-		  			<input type="hidden" id="natural"  value="{{$naturale->id}}">
-
+		  	
+                <Input type="hidden" id="natural" value="{{$persona_id}}">
 
 		  		<div class="form-group">
 				    <label for="idioma">Idioma: </label>
@@ -32,17 +78,25 @@ Registrar Curriculum
 					<p class="alert-danger">{{ $errors->first('usuario') }}</p>
 					@endif -->
   				</div>
-  					<div class="container">
-  				<table class="table table-hover">
-                <thead>
+
+		<table class="table table-hover">
+			<thead>
 				<tr>
 					<th>Nombre</th>
 					<th>Nivel</th>
 				</tr>
-			    </thead>
-			    	<div id="resultado">
-			    </table>
-  				</div>
+			</thead>
+			<tbody>
+				@foreach ($idiomas as $idioma)
+				<tr>
+					<td>{{{ $idioma->nombre }}}</td>
+					<td>{{{ $idioma->nivel }}}</td>
+					
+				</tr>
+				@endforeach
+			
+			</tbody>
+		</table>
 		  		<button onclick="mostrar();" class="btn btn-primary">Agregar</button>
 		  		
 		<!--   	</form> -->
@@ -50,14 +104,12 @@ Registrar Curriculum
 	
 		  		</div>
 	</div>
-
-
-<div class="panel panel-default">
+	
+	<div class="panel panel-default">
 		<div class="panel-heading">Estudios</div>
 		<div class="panel-body">
-		  	<!-- <form action="{{ URL::action('RegistrosController@getRegistrarIdioma')}}" method="POST" id="f1"> -->
-		  		<!-- {{$naturale->id}} -->
-		  			<input type="hidden" id="natural"  value="{{$naturale->id}}">
+		  
+		  			<input type="hidden" id="natural"  value="{{$persona_id}}">
 
 
 		  		<div class="form-group">
@@ -85,34 +137,39 @@ Registrar Curriculum
 					</select>
 		<!-- <input type="text" class="form-control" id="eap" name="eap" placeholder="Ingrese nro de eap "> -->
 				</div>
-                <div class="container">
-  				<table class="table table-hover">
+				<table class="table table-hover">
                 <thead>
 				<tr>
-			    	<td>{{{ $estudio->estudio }}}</td>
-					<td>{{{ $estudio->grado }}}</td>
-					<td>{{{ $estudio->estado }}}</td>
+					<th>Estudio</th>
+					<th>Grado</th>
+					<th>Estado</th>
 				</tr>
 			    </thead>
-			    	<div id="resultado2">
-			    </table>
-  				</div>
+			    <tbody>
+			   
+				@foreach ($estudios as $estudio)
+				<tr>
+					<td>{{{ $estudio->estudio }}}</td>
+					<td>{{{ $estudio->grado }}}</td>
+					<td>{{{ $estudio->estado }}}</td>
+					
+				</tr>
+				@endforeach
+			</tbody>
+		</table>
   				
 		  		<button onclick="mostrar2();" class="btn btn-primary">Agregar</button>
 		  		
 		<!--   	</form> -->
 		</div>
-	
+		
 		  		</div>
 	</div>
-
-
-<div class="panel panel-default">
+	<div class="panel panel-default">
 		<div class="panel-heading">Experiencias</div>
 		<div class="panel-body">
-		  	<!-- <form action="{{ URL::action('RegistrosController@getRegistrarIdioma')}}" method="POST" id="f1"> -->
-		  		<!-- {{$naturale->id}} -->
-		  			<input type="hidden" id="natural"  value="{{$naturale->id}}">
+		  	
+		  			<input type="hidden" id="natural"  value="{{$persona_id}}">
 
 
 		  		<div class="form-group">
@@ -160,39 +217,43 @@ Registrar Curriculum
 				    <!-- @if ($errors->has('usuario'))
 					<p class="alert-danger">{{ $errors->first('usuario') }}</p>
 					@endif -->
-  				</div>	
-  			
-  				<div class="container">
-  				<table class="table table-hover">
-                <thead>
+  				</div>		
+  					<div class="container">
+		<table class="table table-hover">
+			<thead>
 				<tr>
-					            <th>Puesto</th>
-            					<th>Fecha de inicio</th>
-            					<th>Fecha de fin</th>
-            					<th>Empresa</th>
-            					<th>area</th>
-            					<th>descripcion</th>
+					<th>Puesto</th>
+					<th>Fecha de inicio</th>
+					<th>Fecha de fin</th>
+					<th>Empresa</th>
+					<th>area</th>
+					<th>descripcion</th>
 				</tr>
-			    </thead>
-			    	<div id="resultado3">
-			    </table>
-  				</div>
+			</thead>
+			<tbody>
+				@foreach ($experiencias as $experiencia)
+				<tr>
+					<td>{{{ $experiencia->puesto }}}</td>
+					<td>{{{ $experiencia->fecha_i }}}</td>
+					<td>{{{ $experiencia->fecha_f }}}</td>
+					<td>{{{ $experiencia->empresa_n }}}</td>
+					<td>{{{ $experiencia->area }}}</td>
+					<td>{{{ $experiencia->descripcion }}}</td>
+					
+				</tr>
+				@endforeach
+			</tbody>
+		</table>
+	</div>
 		  		<button onclick="mostrar3();" class="btn btn-primary">Agregar</button>
 		  		
 		<!--   	</form> -->
 		</div>
-	
+
 		  		</div>
 	</div>
-
-
-	
-		<a href="/estudiantes/principal" class="btn btn-primary" role="button" style="margin-left: 10px;
+	<a href="/estudiantes/principal" class="btn btn-primary" role="button" style="margin-left: 10px;
  margin-right: 10px;">Finalizar</a>
-
-	
-
-			<!-- {{ Form::submit('Registrar', ['class' => 'btn btn-primary btn-lg']) }}
-{{ Form::close() }}
-	 -->
-@stop
+		{{ HTML::script('js/jquery-2.1.1.min.js') }}
+</body>
+</html>
