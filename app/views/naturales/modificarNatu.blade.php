@@ -61,7 +61,13 @@
 
 	<form action="{{ URL::action('RegistronaturalesController@ActualizarNatu')}}" method="POST" id="f1">
 
-<!-- {{ Form::open(['action' => 'UsuariosController@store']) }} -->
+<div class="container">
+
+	<div class="panel panel-primary">
+			<div class="panel-heading">
+			    <h3 class="panel-title">Datos Personales</h3>
+			</div>
+			<div class="panel-body">
 	
 	<div class="form-group">
 	    <label for="usuario">Nombres: </label>
@@ -161,10 +167,16 @@
 	</div>
 
 	<button type="submit" class="btn btn-primary">Terminar</button>
-</form>
-
+	
+	
 <a href="/estudiantes/modificarEstudios" class="btn btn-primary" role="button" style="margin-left: 10px;
  margin-right: 10px;">Modificar Estudios y demas</a>
+</div>
+	</div>
+</div>
+
+</form>
+
 
 </body>
 </html>

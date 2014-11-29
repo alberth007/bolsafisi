@@ -5,8 +5,14 @@
 
 @section('contenido')
 	<div class="container">
-		<table class="table table-hover">
-			
+  				<table class="table table-hover">
+                <thead>
+				<tr>
+			    	<td>estudio</td>
+					<td>>grado</td>
+					<td>estado</td>
+				</tr>
+			    </thead>
 			<tbody>
 				@foreach ($estudios as $estudio)
 				<tr>

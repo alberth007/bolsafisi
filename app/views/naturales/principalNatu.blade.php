@@ -35,7 +35,7 @@
 		</div>
 	</div> -->
 	
-	<nav role="navigation" class="navbar navbar-default">
+	<nav role="navigation" class="navbar navbar-inverse">
 	        <div class="navbar-header">
 	            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
 	                <span class="sr-only">Toggle navigation</span>
@@ -55,13 +55,13 @@
 	            </ul>
 	            @if(!Auth::check())
 	            <div class="row">
-		           	<a href="/login" class="btn btn-primary navbar-btn navbar-right" role="button" style="margin-left: 10px;
+		           	<a href="/login" class="btn btn-success navbar-btn navbar-right" role="button" style="margin-left: 10px;
  margin-right: 10px;">Inicia Sesion</a>
 		           	<a href="/usuarios/create" class="btn btn-primary navbar-btn navbar-right" role="button">Registrate</a>
 	        	</div>
 	        	@endif
 	        	@if(Auth::check())
-	        		<a href="/principal" class="btn btn-primary navbar-btn navbar-right" role="button" style="margin-left: 10px;
+	        		<a href="/principal" class="btn btn-success navbar-btn navbar-right" role="button" style="margin-left: 10px;
  margin-right: 10px;">Cerrar Sesion</a>
 	        </div>
 	        @endif
@@ -77,8 +77,7 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-4">
-						<div>
-						</div>
+						
 						<div class="panel panel-default" style="margin-top: 10px;">
 							<div class="panel-body">
 								<!-- inicia la seleccion de busqueda -->
@@ -118,45 +117,49 @@
 					</div>
 					<div class="col-lg-8">
 						
-						<div class="row color1" style="margin-top: 10px; margin-bottom: 10px;">
-							<h1>AVISOS DESTACADOS</h1>
-						</div>
-						<div class="row">
-							@foreach ($personaorganuncio as $anuncio)
-							<div class="panel panel-default">
-							  <div class="panel-body">
-							    
-								<div class="col-lg-4">
-											<div >
-									   <div class="thumbnail">
-									      <img src="img5.jpg" alt="imagen">
-									      <div class="caption">
-									              <p>{{$anuncio->titulo}}</p>
-									              <p>{{$anuncio->nombre}}</p>
-									              <p>{{$anuncio->direccion}}</p>
-									              <p>{{$anuncio->rubro}}</p>
-									      </div>
-									   </div>
-
-									</div>
-								</div>
-
-								<div class="col-lg-8">
-									<h3>{{$anuncio->area}}</h3>
-								</div>
-								<a href="/verAnuncio/{{$anuncio->id}}" class="btn btn-primary" role="button" style="margin-left: 10px;
- margin-right: 10px;">Ver anuncio</a>
-
+						<div class="panel panel-primary">
+                            <div class="panel-heading" style="height: 61px;">
+                                <h2 class="panel-title"><h2 style="margin-top: 5px;">Avisos destacados</h2></h2>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                
+                                @foreach ($personaorganuncio as $anuncio)
+				
+						<div class="panel panel-primary">
+							  <div class="panel-heading">
+							  	<h2 class="panel-title">
+							    	<h3>{{$anuncio->titulo}}</h3>
+							    </h2>
 							  </div>
-							</div>
-							@endforeach
-							
+							  <div class="panel-body">
+							  	<div class="row">
+							  		<div class="col-md-4">
+							  			<div class="thumbnail" style="width: 110px; height: 110px;margin-left: 70px;">
+									      {{ HTML::image('img/convocatoria.png')}}
+									      <div class="caption">
+									      </div>
+						 				</div>
+							  		</div>
+							  		<div class="col-md-8">
+							  	<h4>Empresa: {{$anuncio->nombre}}</h4>
+							    <h5>Area del puesto: {{$anuncio->area}}</h5>
+							    <h5>Fecha de publicacion: {{$anuncio->created_at}}</h5>
+							    <h5>Salario ofrecido: {{$anuncio->salario}}</h5>
+							   
+							   
+							    <a href="/verAnuncio/{{$anuncio->id}}" class="btn btn-primary" role="button" style="margin-left: 10px; margin-right: 10px;">Ver anuncio</a>
+							    	</div>
+							  </div>
+							  </div>
 						</div>
-						
-						
-						
-					
-						
+					@endforeach
+                                    
+                                
+            					
+            					</div>
+						    </div>
+						</div>
 					</div>
 				</div>
 			</section>

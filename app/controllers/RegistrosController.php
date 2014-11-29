@@ -2,8 +2,10 @@
 
 class RegistrosController extends \BaseController {
 	public function getRegistroCurriculum()
-	{
-		return View::make('registropersonas.registro-curriculum');
+	{   
+	    $persona_id = Auth::User()->persona->natural->id;
+		return View::make('registropersonas.registro-curriculum')
+		            ->with(compact('persona_id'));
 	}
 
 	public function getPrincipal()
