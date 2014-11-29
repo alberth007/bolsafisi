@@ -37,6 +37,7 @@ Route::get('/estudiantes/modificarDatos', 'RegistronaturalesController@getModifi
 Route::get('/organizaciones/modificarDatos', 'RegistronaturalesController@getModificarDatosO');
 Route::post('/organizaciones/modificarDatos', 'RegistronaturalesController@postActualizarOrga');
 Route::post('/registro/estudiante', 'RegistronaturalesController@store');
+Route::post('/estudiantes/modificarDatos', 'RegistronaturalesController@ActualizarNatu');
 //Route::post('/organizaciones/principal', 'OrganizacionesController@store');
 Route::post('/organizaciones/principal', 'RegistronaturalesController@organizaciones');
 Route::get('/estudiantes/postular/{idanuncio}', 'RegistronaturalesController@GuardarPostulacion' );
