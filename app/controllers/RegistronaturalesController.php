@@ -125,7 +125,10 @@ class RegistronaturalesController extends \BaseController {
 	}
 
 public function getModificarDatos(){
-	return View::make('naturales.modificarNatu');
+	$eaps = Eap::all();
+	$usuario = Usuario::with(['persona', 'persona.natural'])->where('usuarios.id', '=', Auth::user()->id)->first();
+	return View::make('naturales.modificarNatu', compact('usuario'))
+				->with(compact('eaps'));
 }
 
 public function getModificarDatosO(){
@@ -141,6 +144,21 @@ public function getModificarDatosO(){
 	return View::make('organizacion.modificarOrga', compact('usuario'));
 }
 
+public function ActualizarNatu(){
+	$usuario = Usuario::with(['persona', 'persona.natural'])->where('usuarios.id', '=', Auth::user()->id)->first();	
+	$persona = $usuario->persona;
+	$natural= $usuario->persona->natural;
+	$persona->fill(Input::all());
+	$persona->save();
+
+	$natural->fill(Input::all());
+	$natural->save();
+	return Redirect::to('estudiantes/principal')->with([
+		'mensaje' => 'Se han modificado los datos correctamente',
+		'tipoMensaje' => 'info'
+		]);
+
+}	
 public function postActualizarOrga()
 {
 	$usuario = Usuario::with(['persona', 'persona.organizacion'])->where('usuarios.id', '=', Auth::user()->id)->first();
