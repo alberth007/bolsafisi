@@ -70,11 +70,11 @@
 	            <div class="row">
 		           	<a href="/login" class="btn btn-primary navbar-btn navbar-right" role="button" style="margin-left: 10px;
  margin-right: 10px;">Inicia Sesion</a>
-		           	<a href="/usuarios/create" class="btn btn-primary navbar-btn navbar-right" role="button">Registrate</a>
+		           	<a href="/usuarios/create" class="btn btn-success navbar-btn navbar-right" role="button">Registrate</a>
 	        	</div>
 	        	@endif
 	        	@if(Auth::check())
-	        		<a href="/principal" class="btn btn-primary navbar-btn navbar-right" role="button" style="margin-left: 10px;
+	        		<a href="/principal" class="btn btn-success navbar-btn navbar-right" role="button" style="margin-left: 10px;
  margin-right: 10px;">Cerrar Sesion</a>
 	        </div>
 	        @endif

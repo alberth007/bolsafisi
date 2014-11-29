@@ -34,7 +34,7 @@
 	                <span class="icon-bar"></span>
 	                <span class="icon-bar"></span>
 	            </button>
-	            <a href="#" class="navbar-brand">Logotipo</a>
+	            <a href="#" class="navbar-brand">BolsaFISI</a>
 	        </div>
 
 	        <div id="navbarCollapse" class="collapse navbar-collapse">

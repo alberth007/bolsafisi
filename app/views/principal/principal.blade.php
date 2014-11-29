@@ -12,28 +12,24 @@
 	.color2{
   	background-color: orange; 
 	}
-	.color1{
-		background-color: blue;
+	.color3{
+		background-color: #808080
+	}
+	.colorle1{
+		color: white;
+	}
+	#color1{
+		background-color: white;
+	}
+	#fondo-natural{
+		background-color: #F5F5F5;
 	}
 	</style>
 
 </head>
-<body>
-	<div class="top-gec">
-		<div class="row">
-			<div class="col-lg-8">
-				<img src="cabecera.png" alt="">
-			</div>
-			<div class="col-lg-2">
-				logo facebook
-			</div>
-			<div class="col-lg-2">
-				logo 2
-			</div>
-		</div>
-	</div>
+<body id="fondo-natural">
 	
-	<nav role="navigation" class="navbar navbar-default">
+	<nav role="navigation" class="navbar navbar-inverse" style="margin-bottom: 0px;">
 	        <div class="navbar-header">
 	            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
 	                <span class="sr-only">Toggle navigation</span>
@@ -41,7 +37,7 @@
 	                <span class="icon-bar"></span>
 	                <span class="icon-bar"></span>
 	            </button>
-	            <a href="#" class="navbar-brand">Logotipo</a>
+	            <a href="#" class="navbar-brand">BolsaFISI</a>
 	        </div>
 
 	        <div id="navbarCollapse" class="collapse navbar-collapse">
@@ -52,9 +48,9 @@
 	                <li><a href="#">Contacto</a></li>
 	            </ul>
 	            <div class="row">
-		           	<a href="/login" class="btn btn-primary navbar-btn navbar-right" role="button" style="margin-left: 10px;
+		           	<a href="/login" class="btn btn-success navbar-btn navbar-right" role="button" style="margin-left: 10px;
  margin-right: 10px;">Inicia Sesion</a>
-		           	<a href="/usuarios/create" class="btn btn-primary navbar-btn navbar-right" role="button">Registrate</a>
+		           	<a href="/usuarios/create" class="btn btn-success navbar-btn navbar-right" role="button">Registrate</a>
 	        	</div>
 	        </div>
 	</nav>
@@ -74,7 +70,7 @@
   <div class="carousel-inner" role="listbox">
   
     <div class="item active">
-    	{{ HTML::image('img/imagen1.jpg') }}
+    	{{ HTML::image('img/im1.jpg') }}
    
       <div class="carousel-caption">
       <h3>Los mejores anuncios</h3>
@@ -82,13 +78,23 @@
       </div>
     </div>
     <div class="item">
-    	{{ HTML::image('img/imagen2.jpg') }}
+    	{{ HTML::image('img/im2.jpg') }}
       
       <div class="carousel-caption">
        <h3>En la mejor plataforma</h3>
       <p>descripcion</p>
       </div>
     </div>
+    
+      <div class="item">
+    	{{ HTML::image('img/im3.jpg') }}
+      
+      <div class="carousel-caption">
+       <h3>En la mejor plataforma</h3>
+      <p>descripcion</p>
+      </div>
+    </div>
+    
   
   </div>
 
@@ -106,7 +112,7 @@
 	</div>
 <!-- termina el carrousel -->
 <!-- hago un sistema de grillas -->
-		<div class="container">
+		<div id="color1" class="container ">
 			<section>
 				<div class="row">
 					
@@ -152,12 +158,12 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-8">
+					<div class="col-lg-8" >
 						
-						<div class="row color1" style="margin-top: 10px; margin-bottom: 10px;">
-							<h1>AVISOS DESTACADOS</h1>
+						<div class="row color1" style="margin-top: 10px; margin-bottom: 10px; margin-right: 0px;">
+							<h2 class="color1" style="padding-left: 20px;">AVISOS DESTACADOS</h2>
 						</div>
-						<div class="row">
+						<div class="row colorle1" style="margin-right: 0px; margin-left: -30px;">
 							@foreach ($personaorganuncio as $anuncio)
 							<div class="panel panel-default">
 							  <div class="panel-body">

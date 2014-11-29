@@ -1,3 +1,30 @@
+<head>
+	<meta charset="UTF-8">
+	<title>Modificar Datos</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user scalable=no">
+	{{ HTML::style('css/bootstrap.css') }}
+	{{ HTML::style('css/bootstrap.min.css') }}
+	{{ HTML::style('css/estilos.css') }}
+	{{ HTML::script('js/ajax.js') }}
+	<!-- <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"> -->
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	
+	<style>
+	.color2{
+  	background-color: orange; 
+	}
+	.color1{
+		background-color: blue;
+	}
+	#fondo-natural{
+		background-color: #F5F5F5;
+	}
+	</style>
+
+</head>
+<body id="fondo-natural">
+
 @extends('esquemas.eaps')
 
 @section('titulo')
@@ -93,4 +120,7 @@ Registrar estudiante
 			<!-- {{ Form::submit('Registrar', ['class' => 'btn btn-primary btn-lg']) }}
 {{ Form::close() }}
 	 -->
+
 @stop
+
+</body>

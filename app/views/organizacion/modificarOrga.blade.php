@@ -35,7 +35,7 @@
 	                <span class="icon-bar"></span>
 	                <span class="icon-bar"></span>
 	            </button>
-	            <a href="#" class="navbar-brand">Logotipo</a>
+	            <a href="#" class="navbar-brand">BolsaFISI</a>
 	        </div>
 
 	        <div id="navbarCollapse" class="collapse navbar-collapse">
@@ -48,9 +48,9 @@
 	            </ul>
 	            @if(!Auth::check())
 	            <div class="row">
-		           	<a href="/login" class="btn btn-primary navbar-btn navbar-right" role="button" style="margin-left: 10px;
+		           	<a href="/login" class="btn btn-success navbar-btn navbar-right" role="button" style="margin-left: 10px;
  margin-right: 10px;">Inicia Sesion</a>
-		           	<a href="/usuarios/create" class="btn btn-primary navbar-btn navbar-right" role="button">Registrate</a>
+		           	<a href="/usuarios/create" class="btn btn-success navbar-btn navbar-right" role="button">Registrate</a>
 	        	</div>
 	        	@endif
 	        	@if(Auth::check())
