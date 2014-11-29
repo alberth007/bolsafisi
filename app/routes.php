@@ -56,7 +56,7 @@ Route::get('/estudiante/estudio/{estudio}/{grado}/{estado}/{natural}', 'Registro
 // Route::controller('', 'RegistrosController' );
 Route::get('/estudiante/experiencia/{puesto}/{fecha_ini}/{fecha_fin}/{empresa}/{area}/{descripcion}/{natural}', 'RegistrosController@getRegistrarExperiencia');
 Route::get('/organizacion/anuncios/{orga}/{exiteper}', 'OrganizacionesController@getMostrarAnuncios');
-Route::get('/bienvenida', 'IniciosController@getBienvenida');
+Route::get('/', 'IniciosController@getBienvenida');
 Route::post('login', 'UsuariosLoginController@usuarios');
 Route::post('logout', 'UsuariosLoginController@Cerrar_Logout');
 
